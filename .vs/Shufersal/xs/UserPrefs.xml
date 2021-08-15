@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{CBC16DCD-E746-4949-9F59-114F775C8B47}|Default">
+  <MonoDevelop.Ide.ItemProperties.Core PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Shufersal/Shopping2.feature">
+    <Files>
+      <File FileName="Core/Features/test.feature" Line="1" Column="1" />
+      <File FileName="Shufersal/Shopping2.feature" Line="10" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
+          <Option id="ShowVersionControlOverlays" value="False" />
+          <Node name="Shufersal" expanded="True" selected="True">
+            <Node name="Core" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Shufersal" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

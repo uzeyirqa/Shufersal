@@ -1,0 +1,92 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="85.0.0" />
+    <PackageReference Include="SpecFlow" Version="3.9.22" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.22" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Selenium.WebDriver" />
+    <None Remove="Selenium.Support" />
+    <None Remove="Selenium.Chrome.WebDriver" />
+    <None Remove="POM\" />
+    <None Remove="Steps\" />
+    <None Remove="Implimentation\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Context\" />
+    <None Remove="POM\Methods\" />
+    <None Remove="POM\Locators\" />
+    <None Remove="POM\Locators\Header\" />
+    <None Remove="POM\Locators\SuperMarketSubMenu\" />
+    <None Remove="POM\Locators\DiaryProductsForm\" />
+    <None Remove="POM\Locators\SearchBar\" />
+    <None Remove="POM\Locators\featuredProducts\" />
+    <None Remove="POM\Locators\Cart\" />
+    <None Remove="POM\Methods\Header\" />
+    <None Remove="POM\Methods\DairyProductsForm\" />
+    <None Remove="POM\Methods\SubMenu\" />
+    <None Remove="POM\Methods\SearchBar\" />
+    <None Remove="POM\Models\" />
+    <None Remove="POM\Methods\FeaturedProducts\" />
+    <None Remove="SpecFlow" />
+    <None Remove="SpecFlow.NUnit" />
+    <None Remove="SpecFlow.Tools.MsBuild.Generation" />
+    <None Remove="Features\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelpersProject\HelpersProject.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="POM\" />
+    <Folder Include="Steps\" />
+    <Folder Include="Implementation\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="WorkWithCore\" />
+    <Folder Include="POM\Methods\" />
+    <Folder Include="POM\Locators\" />
+    <Folder Include="POM\Locators\Header\" />
+    <Folder Include="POM\Locators\SuperMarketSubMenu\" />
+    <Folder Include="POM\Locators\DiaryProductsForm\" />
+    <Folder Include="POM\Locators\SearchBar\" />
+    <Folder Include="POM\Locators\featuredProducts\" />
+    <Folder Include="POM\Locators\Cart\" />
+    <Folder Include="POM\Methods\Header\" />
+    <Folder Include="POM\Methods\DairyProductsForm\" />
+    <Folder Include="POM\Methods\SubMenu\" />
+    <Folder Include="POM\Methods\SearchBar\" />
+    <Folder Include="POM\Models\" />
+    <Folder Include="POM\Methods\FeaturedProducts\" />
+    <Folder Include="Features\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Shop.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Shop.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\test.feature">
+      <Visible>False</Visible>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>test.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Features\test.feature.cs">
+      <DependentUpon>test.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
