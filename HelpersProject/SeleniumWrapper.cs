@@ -26,10 +26,7 @@ namespace HelperProject
 
         public static IWebElement FindElement(By locator, int waitTime = 25, bool waitPageLoad = true)
         {
-            var url = GetDriver().Url;
-            WaitElementVisible(locator, waitTime, waitPageLoad && !url.Contains("mail-groups")
-                                                               && !url.Contains("#settings/permissions")
-                                                               && !url.Contains("light-trading"));
+            WaitElementVisible(locator, waitTime, waitPageLoad);
             return GetDriver().FindElement(locator);
         }
 
