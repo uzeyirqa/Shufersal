@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpersProject", "HelpersPr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource files", "Resource files", "{859809EB-51AC-4880-94B4-CCB5BA171C81}"
 	ProjectSection(SolutionItems) = preProject
-		Environments.xml = Environments.xml
+		environments.xml = environments.xml
 		prod.runsettings = prod.runsettings
 	EndProjectSection
 EndProject

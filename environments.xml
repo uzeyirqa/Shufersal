@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <environment name="prod">
+        <brand name="shufersal">
+            <sal>
+                <app>https://www.shufersal.co.il/</app>
+            </sal>
+        </brand>
+    </environment>
+</root>

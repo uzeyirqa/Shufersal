@@ -5,6 +5,6 @@ namespace Core.POM.Locators.SubMenuLocators
 {
     public static class SubMenuLocators
     {
-        internal static readonly By MilkProductsLink = By.CssSelector("#secondMenu1 > li.panel.active > a");
+        internal static readonly By MilkProductsLink = By.XPath("//*[@id='secondMenu1']/li[6]");
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wPKFraWtxyDe6+LFK90Bqui0aW7tuxKpTEtLwPa2GVF91KVS5JvT8nckiFfDoS/IKRLxbRa925ESaz0l/GPLfA==",
+  "dgSpecHash": "ggfSeAu3sDSVR9b6j65+2ey05apahQtT0paSE/wGtarDM9q30LlfglfraM297W/1Jbw9kOwI/94Jh5VTZf3RMA==",
   "success": true,
   "projectFilePath": "/Users/uzeyirabdullayev/Projects/Shufersal/HelpersProject/HelpersProject.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/uzeyirabdullayev/.nuget/packages/nunit3testadapter/4.0.0/nunit3testadapter.4.0.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/selenium.chrome.webdriver/85.0.0/selenium.chrome.webdriver.85.0.0.nupkg.sha512",
+    "/Users/uzeyirabdullayev/.nuget/packages/selenium.firefox.webdriver/0.27.0/selenium.firefox.webdriver.0.27.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/selenium.support/3.141.0/selenium.support.3.141.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/selenium.webdriver/3.141.0/selenium.webdriver.3.141.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/sharpziplib/1.3.2/sharpziplib.1.3.2.nupkg.sha512",

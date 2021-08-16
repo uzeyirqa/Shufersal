@@ -14,7 +14,7 @@ namespace Core.Implimentation.General
         public static ICart CartUi => new CartUi();
         public static IHomePage HomePageUniversal { get; }
         public static IHomePage HomePageApi => new HomePageApi();
-        public static IHomePage HomePageUi => new HomePageUi();
+        public static IHomePage HomePageUi => new HomePageUi(); 
         public static  ISearch SearchUniversal { get; }
         public static ISearch SearchApi => new SearchApi();
         public static ISearch SearchUi => new SearchUi();

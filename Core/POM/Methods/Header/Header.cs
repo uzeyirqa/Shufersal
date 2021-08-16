@@ -7,6 +7,10 @@ namespace Core.POM.Methods.Header
 {
     public static class Header
     {
-        public static void ClickSuperMarketLink() => SeleniumWrapper.FindElement(HeaderLocators.SuperMarketLink).Click();
+        public static void ClickSuperMarketLink()
+        {
+            SeleniumWrapper.WaitElementClickable(HeaderLocators.SuperMarketLink);
+            SeleniumWrapper.FindElement(HeaderLocators.SuperMarketLink).Click();
+        } 
     }
 }

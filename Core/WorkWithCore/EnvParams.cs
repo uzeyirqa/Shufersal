@@ -1,26 +1,30 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 using Core.Context;
 using HelperProject.Logging;
 using HelpersProject.Helpers;
 using NUnit.Framework;
 
-namespace Core.WorkWithCore
+namespace Core.Core
 {
     public class EnvParams
     {
         // Names of parameters.
         private const string EnvNameNode = "name";
         private const string BrandNameNode = "brandname";
-        private const string SalNode = "Sal";
+        private const string DomainNameNode = "domainname";
+        private const string SalNode = "sal";
         private const string AppNode = "app";
         private const string BrandNode = "brand";
-        
+
+
         // Test configurations.
         private static readonly string _env = TestContext.Parameters.Get("env");
-        private static string _browser = TestContext.Parameters.Get("browser");
         private static readonly string _brand = TestContext.Parameters.Get("brand");
+        private static string _browser = TestContext.Parameters.Get("browser");
 
         // environment block from environment xml.
         private static XmlNode CurrentEnv { get; }
@@ -32,8 +36,8 @@ namespace Core.WorkWithCore
             // Load environment xml.
             try
             {
-                var path = new FileHelper().GetPathToSolutionRoot()
-                           + GlobalConstants.EnvironmentConfig;
+                 var path = new FileHelper().GetPathToSolutionRoot() 
+                            + GlobalConstants.EnvironmentConfig;
 
                 environmentXml.Load(path);
             }
@@ -89,6 +93,8 @@ namespace Core.WorkWithCore
         {
             return GetBrandAsXmlNode().Attributes["name"].Value;
         }
+        
+        
 
         public static string BrowserName()
         {
@@ -100,10 +106,17 @@ namespace Core.WorkWithCore
 
         /*--- Domains ---*/
 
-        public static string ShufersalDomain()
+        public static string Domain()
         {
-            return GetBrandAsXmlNode().SelectSingleNode(SalNode).SelectSingleNode(AppNode).InnerText;
+            return  GetBrandAsXmlNode().SelectSingleNode(SalNode).SelectSingleNode(AppNode).InnerText;
         }
+
+        public static string DomainName()
+        {
+            return GetBrandAsXmlNode().SelectSingleNode(DomainNameNode)?.InnerText;
+        }
+        
+        /*--- Other ---*/
 
         /// <summary>
         /// Select brand by specified name.
@@ -119,6 +132,34 @@ namespace Core.WorkWithCore
                     return bn;
 
             throw new Exception($"No brand - {brandName}");
+        }
+
+        /// <summary>
+        /// Gets all brand objects (nodes) of current environment.
+        /// </summary>
+        /// <returns>List of brand objects (nodes).</returns>
+        public static XmlNodeList AllBrands()
+        {
+            return CurrentEnv.SelectNodes(BrandNode);
+        }
+
+        /// <summary>
+        /// Gets all brand names of current environment.
+        /// </summary>
+        /// <returns>List of brand objects (nodes).</returns>
+        public static List<string> AllBrandNames()
+        {
+            return (from XmlNode bn in AllBrands() select bn.Attributes["name"].Value).ToList();
+        }
+
+        public static List<string> AllEnvironmentNames()
+        {
+            var allEnvironmentNames = new List<string>();
+
+            foreach (XmlNode bn in CurrentEnv.SelectNodes(BrandNode))
+                allEnvironmentNames.Add(bn.SelectSingleNode(BrandNameNode)?.InnerText);
+
+            return allEnvironmentNames;
         }
     }
 }

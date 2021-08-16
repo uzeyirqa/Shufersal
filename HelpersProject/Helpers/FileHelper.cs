@@ -9,8 +9,11 @@ namespace HelpersProject.Helpers
         public string GetPathToSolutionRoot()
         {
             var directoryPath = AppDomain.CurrentDomain.BaseDirectory;
-            while (!Directory.GetFiles(directoryPath, "*.sln", SearchOption.AllDirectories).Any())
-                directoryPath = Path.GetFullPath(directoryPath + "..\\");
+            while (!Directory.GetFiles(directoryPath, "*.sln", SearchOption.TopDirectoryOnly).Any())
+                directoryPath = Path.GetFullPath(directoryPath+ "..//");
+
+            if (!directoryPath.EndsWith(@"/"))
+                directoryPath += @"/";
 
             return directoryPath;
         }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Threading;
 using HelperProject.Context;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -17,41 +15,29 @@ namespace HelpersProject.Helpers
 {
     public class WebDriverHelper
     {
-        private static readonly string _pathToSolution = new FileHelper().GetPathToSolutionRoot();
+
 
         public IWebDriver CreateWebDriver()
         {
-            var browserType = TestContext.Parameters.Get("browser") ?? "chrome";
-            
+            var browserType = TestContext.Parameters.Get("browser");
+
             IWebDriver driver;
+
             switch (browserType.ToLower())
             {
-                case "":
-                case "default":
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
-                    //chromeOptions.AddArguments("chrome.switches", "--disable-extensions --disable-extensions-file-access-check --disable-extensions-http-throttling --disable-infobars");
-                    var path = $"{_pathToSolution}DownloadedFiles\\ThreadNumber{Thread.CurrentThread.ManagedThreadId}";
-                    FeatureDictionary.Current["folderPath"] = path;
-
                     chromeOptions.AddArguments("--browser.download.folderList=2");
                     chromeOptions.AddArguments("--browser.helperApps.neverAsk.saveToDisk");
-                    chromeOptions.AddArguments("--browser.download.dir=" + path);
                     chromeOptions.AddArgument("--start-maximized");
                     chromeOptions.AddArgument("--no-sandbox");
                     chromeOptions.AddArgument("--test-type=ui");
                     chromeOptions.AddUserProfilePreference("credentials_enable_service", false);
                     chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
                     chromeOptions.AddUserProfilePreference("safebrowsing.enabled", true);
-                    chromeOptions.AddUserProfilePreference("download.default_directory", path);
-
+                    chromeOptions.AddExcludedArgument("enable-popup-blocking");
                     new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
                     driver = new ChromeDriver(chromeOptions);
-
-                    if (!new DirectoryInfo(path).Exists)
-                        Directory.CreateDirectory(path);
-
-                    FeatureDictionary.Current["numberOfFilesBeforeTestRun"] = Directory.GetFiles(path).Length;
                     break;
                 case "firefox":
                     new DriverManager().SetUpDriver(new FirefoxConfig());
@@ -74,6 +60,7 @@ namespace HelpersProject.Helpers
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(7);
             driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+            //driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(15);
 
             return driver;
         }
