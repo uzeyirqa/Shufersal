@@ -12,7 +12,7 @@ namespace Core.POM.Methods.DairyProductsForm
 
         public static void MilkLinkClick()
         {
-
+            SeleniumWrapper.FindElement(DiaryProductsFormLocators.MilkProductsLink).Click();
         }
             
         

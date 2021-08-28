@@ -8,5 +8,6 @@ namespace Core.Context
         public static readonly string ImplementationType = TestContext.Parameters.Get("testRunType");
         // Target environment configuration file.
         public const string EnvironmentConfig = "environments.xml";
+        public const string WebDriver = "webDriver";
     }
 }

@@ -15,8 +15,6 @@ namespace HelpersProject.Helpers
 {
     public class WebDriverHelper
     {
-
-
         public IWebDriver CreateWebDriver()
         {
             var browserType = TestContext.Parameters.Get("browser");
@@ -38,6 +36,7 @@ namespace HelpersProject.Helpers
                     chromeOptions.AddExcludedArgument("enable-popup-blocking");
                     new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
                     driver = new ChromeDriver(chromeOptions);
+                    driver.Manage().Window.Maximize();
                     break;
                 case "firefox":
                     new DriverManager().SetUpDriver(new FirefoxConfig());

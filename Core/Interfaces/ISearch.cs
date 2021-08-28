@@ -5,15 +5,11 @@ namespace Core.Interfaces
         /// <summary>
         /// This method searches for a specified product
         /// </summary>
-        /// <param name="product"></param>
-        /// <param name="brand"></param>
-        /// <param name="price"></param>
-        public void SearchForDairyProduct(string product, string brand = null, int price = 0);
+        public void SearchForDairyProduct();
         
         /// <summary>
         /// This method adds some product to cart
         /// </summary>
-        /// <param name="product"></param>
-        public void AddToCart(string product);
+        public void AddToCart();
     }
 }

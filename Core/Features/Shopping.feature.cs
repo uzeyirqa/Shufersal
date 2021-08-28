@@ -105,10 +105,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Shufersal website is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("I search for the cheapest \"milk\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I search for the cheapest milk", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.And("add the \"milk\" to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("add to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
  testRunner.Then("Then the price of the milk with shipping cost is displayed in my cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

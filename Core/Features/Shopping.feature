@@ -5,6 +5,6 @@ Feature: Shopping
 
 Scenario: Find the cheapest milk and add to cart
 	Given Shufersal website is open
-	When I search for the cheapest "milk"
-	And add the "milk" to the cart
+	When I search for the cheapest milk
+	And add to the cart
 	Then Then the price of the milk with shipping cost is displayed in my cart

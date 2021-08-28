@@ -2,6 +2,7 @@ using TechTalk.SpecFlow;
 using  Core.Implimentation.General;
 using HelperProject;
 using OpenQA.Selenium;
+using Should;
 
 namespace Core.Steps
 {
@@ -12,16 +13,19 @@ namespace Core.Steps
         public void GivenShufersalWebsiteIsOpen() =>
             InterfacesOfShuf.HomePageUniversal.OpenShufersalHomePage();
         
-        [When(@"I search for the cheapest (.*)")]
-        public void WhenISearchForTheCheapestMilk(string milk)=>
-           InterfacesOfShuf.SearchUniversal.SearchForDairyProduct(milk);
+        [When(@"I search for the cheapest milk")]
+        public void WhenISearchForTheCheapestMilk()=>
+           InterfacesOfShuf.SearchUniversal.SearchForDairyProduct();
         
-        [When(@"add the (.*) to the cart")]
-        public void WhenAddTheMilkToTheCart(string milk)=>
-           InterfacesOfShuf.SearchUniversal.AddToCart(milk);
+        [When(@"add to the cart")]
+        public void WhenAddTheMilkToTheCart()=>
+           InterfacesOfShuf.SearchUniversal.AddToCart();
 
         [Then(@"Then the price of the milk with shipping cost is displayed in my cart")]
-        public void ThenThenThePriceOfTheMilkWithShippingCostIsDisplayedInMyCart() =>
-            InterfacesOfShuf.CartUniversal.VerifyCartPrice();
+        public void ThenThenThePriceOfTheMilkWithShippingCostIsDisplayedInMyCart()
+        {
+            InterfacesOfShuf.CartUniversal.VerifyCartPrice().ShouldBeGreaterThanOrEqualTo(30);
+            InterfacesOfShuf.CartUniversal.IsShippingIncluded().ShouldBeTrue();
+        }
     }
 }

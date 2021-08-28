@@ -451,7 +451,7 @@ namespace HelperProject
         public static void ScrollByPixels(By locator, int offSetX, int offSetY)
         {
             var toLocator = new Regex("By.*: (.*)").Match(locator.ToString()).Groups[1];
-            GetDriver().ExecuteJavaScript($"document.querySelector('{toLocator}').scrollTo({offSetX},{offSetY})");
+            GetDriver().ExecuteJavaScript($"document.querySelector('{toLocator}').scrollTo({offSetX},{offSetY});");
         }
 
         /// <summary>

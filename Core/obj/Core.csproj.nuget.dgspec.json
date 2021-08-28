@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[3.141.0, )"
             },
+            "Should": {
+              "target": "Package",
+              "version": "[1.1.20, )"
+            },
             "SpecFlow": {
               "target": "Package",
               "version": "[3.9.22, )"
@@ -151,6 +155,10 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.0.0, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.12.0, )"
             },
             "Selenium.Chrome.WebDriver": {
               "target": "Package",

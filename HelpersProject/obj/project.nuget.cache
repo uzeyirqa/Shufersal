@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ggfSeAu3sDSVR9b6j65+2ey05apahQtT0paSE/wGtarDM9q30LlfglfraM297W/1Jbw9kOwI/94Jh5VTZf3RMA==",
+  "dgSpecHash": "OWCeOH0Zfvbu1a7nElK/3oJvxeGQG8gO+I1vvOnAxyqtKcMwSN1Mw/A4g6a+jcOzUFCy/1jImJmVXCBwWrQp6g==",
   "success": true,
   "projectFilePath": "/Users/uzeyirabdullayev/Projects/Shufersal/HelpersProject/HelpersProject.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "/Users/uzeyirabdullayev/.nuget/packages/nuget.frameworks/5.0.0/nuget.frameworks.5.0.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/nunit/3.13.2/nunit.3.13.2.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/nunit3testadapter/4.0.0/nunit3testadapter.4.0.0.nupkg.sha512",
+    "/Users/uzeyirabdullayev/.nuget/packages/restsharp/106.12.0/restsharp.106.12.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/selenium.chrome.webdriver/85.0.0/selenium.chrome.webdriver.85.0.0.nupkg.sha512",
     "/Users/uzeyirabdullayev/.nuget/packages/selenium.firefox.webdriver/0.27.0/selenium.firefox.webdriver.0.27.0.nupkg.sha512",

@@ -3,9 +3,10 @@ namespace Core.Interfaces
     public interface ICart
     {
         /// <summary>
-        /// This method verifies product price.
+        /// This method verifies the total price.
         /// </summary>
-        /// <param name="price"></param>
-        public void VerifyCartPrice(int price=0);
+        public double VerifyCartPrice();
+
+        public bool IsShippingIncluded();
     }
 }

@@ -4,7 +4,12 @@ namespace Core.Implimentation.Cart
 {
     public class CartApi : ICart
     {
-        public void VerifyCartPrice(int price)
+        public double VerifyCartPrice()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool IsShippingIncluded()
         {
             throw new System.NotImplementedException();
         }
